@@ -1,0 +1,32 @@
+{
+  "name": "get-stack",
+  "version": "0.0.0",
+  "description": "Get stack info for a position in code.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MauriceButler/get-stack.git"
+  },
+  "author": "Maurice Butler <maurice.butler@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MauriceButler/get-stack/issues"
+  },
+  "homepage": "https://github.com/MauriceButler/get-stack",
+  "keywords": [
+    "stack",
+    "stacktrace",
+    "line number",
+    "filename",
+    "function",
+    "error",
+    "backtrace",
+    "trace"
+  ],
+  "devDependencies": {
+    "grape": "^1.0.0"
+  }
+}
