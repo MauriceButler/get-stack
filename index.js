@@ -14,5 +14,5 @@ module.exports = function (level){
         return 'stack level ' + level + ' out of range.';
     }
 
-    return (stack.fun.name || 'anonymous') + ' (' + stack.getFileName() + ':' + stack.getLineNumber() + ')';
+    return ((stack.fun && stack.fun.name) || 'anonymous') + ' (' + stack.getFileName() + ':' + stack.getLineNumber() + ')';
 };

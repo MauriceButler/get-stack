@@ -1,4 +1,4 @@
-var test = require('grape'),
+var test = require('tape'),
     getStack = require('../'),
     path = require('path');
 
@@ -17,7 +17,7 @@ test('getStack defaults', function (t) {
 test('getStack different level', function (t) {
     t.plan(1);
 
-    t.equal(getStack(1), 'anonymous (' + path.join(__dirname, '../', 'node_modules/grape/grape.js:47)'), 'get correct stack info');
+    t.equal(getStack(1), 'anonymous (' + path.join(__dirname, '../', 'node_modules/tape/lib/test.js:62)'), 'get correct stack info');
 });
 
 test('getStack out of range level', function (t) {
