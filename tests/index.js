@@ -8,16 +8,24 @@ test('getStack Exists', function (t) {
     t.equal(typeof getStack, 'function', 'getStack is an function');
 });
 
-test('getStack defaults', function (t) {
+test('getStack defaults', function getStackDefaults(t) {
     t.plan(1);
 
-    t.equal(getStack(), 'anonymous (' + __filename + ':14)', 'get correct stack info');
+    t.equal(getStack(), 'Test.getStackDefaults (/home/maurice/dev/get-stack/tests/index.js:14:13)', 'get correct stack info');
 });
 
 test('getStack different level', function (t) {
     t.plan(1);
 
-    t.equal(getStack(1), 'anonymous (' + path.join(__dirname, '../', 'node_modules/tape/lib/test.js:62)'), 'get correct stack info');
+    function myCoolFunction(){
+        t.equal(getStack(1), 'myOtherCoolFunction (/home/maurice/dev/get-stack/tests/index.js:25:9)', 'get correct stack info');
+    }
+
+    function myOtherCoolFunction(){
+        myCoolFunction();
+    }
+
+    myOtherCoolFunction();
 });
 
 test('getStack out of range level', function (t) {
